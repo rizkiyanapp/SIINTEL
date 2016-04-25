@@ -51,7 +51,7 @@ public class signInPage extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         btnSignIn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(153, 153, 153));
+        setBackground(new java.awt.Color(9, 131, 109));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
