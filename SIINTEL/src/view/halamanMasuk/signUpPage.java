@@ -108,7 +108,7 @@ public class signUpPage extends javax.swing.JPanel {
         setBackground(new java.awt.Color(9, 131, 109));
 
         cbType.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        cbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager Inventaris", "Koordinator Inventaris", "Pelapor" }));
+        cbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Silahkan pilih jenis...", "Manager Inventaris", "Koordinator Inventaris", "Pelapor" }));
 
         spinDay.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
 

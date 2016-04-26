@@ -126,10 +126,11 @@
           <Font name="Calibri" size="12" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Manager Inventaris"/>
-            <StringItem index="1" value="Koordinator Inventaris"/>
-            <StringItem index="2" value="Pelapor"/>
+          <StringArray count="4">
+            <StringItem index="0" value="Silahkan pilih jenis..."/>
+            <StringItem index="1" value="Manager Inventaris"/>
+            <StringItem index="2" value="Koordinator Inventaris"/>
+            <StringItem index="3" value="Pelapor"/>
           </StringArray>
         </Property>
       </Properties>
