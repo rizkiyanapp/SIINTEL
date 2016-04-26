@@ -167,7 +167,7 @@
               <Font name="Calibri" size="12" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\TubesRPL\SIINTEL\SIINTEL\images\022 Document Add (2).png"/>
+              <Image iconType="3" name="/images/022 Document Add (2).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="LAPORAN PENGAJUAN"/>
           </Properties>
@@ -181,7 +181,7 @@
               <Font name="Calibri" size="12" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\TubesRPL\SIINTEL\SIINTEL\images\108 Bookmark (2).png"/>
+              <Image iconType="3" name="/images/108 Bookmark (2).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="LIHAT LAPORAN"/>
           </Properties>
@@ -195,7 +195,7 @@
               <Font name="Calibri" size="12" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\TubesRPL\SIINTEL\SIINTEL\images\147 RoundedActionRight (2).png"/>
+              <Image iconType="3" name="/images/147 RoundedActionRight (2).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="KELUAR"/>
           </Properties>

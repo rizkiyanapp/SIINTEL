@@ -63,6 +63,7 @@ public class signInPage extends javax.swing.JPanel {
 
         btnSignIn.setBackground(new java.awt.Color(255, 255, 255));
         btnSignIn.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        btnSignIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new/Checked User Male Filled-16 (2).png"))); // NOI18N
         btnSignIn.setText("MASUK");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

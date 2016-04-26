@@ -70,17 +70,17 @@ public class dasboardPelapor extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\TubesRPL\\SIINTEL\\SIINTEL\\images\\022 Document Add (2).png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/022 Document Add (2).png"))); // NOI18N
         jButton1.setText("LAPORAN PENGAJUAN");
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\TubesRPL\\SIINTEL\\SIINTEL\\images\\108 Bookmark (2).png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/108 Bookmark (2).png"))); // NOI18N
         jButton2.setText("LIHAT LAPORAN");
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\TubesRPL\\SIINTEL\\SIINTEL\\images\\147 RoundedActionRight (2).png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/147 RoundedActionRight (2).png"))); // NOI18N
         jButton3.setText("KELUAR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

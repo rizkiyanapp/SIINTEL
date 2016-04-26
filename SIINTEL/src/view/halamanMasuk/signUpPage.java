@@ -154,6 +154,7 @@ public class signUpPage extends javax.swing.JPanel {
 
         btnSignUp.setBackground(new java.awt.Color(255, 255, 255));
         btnSignUp.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        btnSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new/Add User Male Filled-16 (2).png"))); // NOI18N
         btnSignUp.setText("DAFTAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
