@@ -32,6 +32,11 @@ public class signInPage extends javax.swing.JPanel {
         return txPassword.getText();
     }
     
+    public void reset() {
+        txUsername.setText("");
+        txPassword.setText("");
+    }
+    
     public void addListener(ActionListener e) {
         btnSignIn.addActionListener(e);
     }

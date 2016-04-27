@@ -65,6 +65,20 @@ public class signUpPage extends javax.swing.JPanel {
         return txNumber.getText();
     }
     
+    public void reset() {
+        cbType.setSelectedIndex(0);
+        txUsername.setText("");
+        txPassword.setText("");
+        txCPassword.setText("");
+        txNIP.setText("");
+        txName.setText("");
+        spinDay.setValue(1);
+        spinMonth.setValue(1);
+        spinYear.setValue(1970);
+        txEmail.setText("");
+        txNumber.setText("");
+    }
+    
     public void addAdapter(MouseAdapter e) {
         spinDay.addMouseListener(e);
         spinMonth.addMouseListener(e);

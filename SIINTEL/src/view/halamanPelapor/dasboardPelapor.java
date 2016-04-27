@@ -5,6 +5,9 @@
  */
 package view.halamanPelapor;
 
+import java.awt.CardLayout;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author NANON
@@ -14,9 +17,55 @@ public class dasboardPelapor extends javax.swing.JFrame {
     /**
      * Creates new form dasboardPelapor
      */
+    
+    CardLayout cardLayout;
+    
     public dasboardPelapor() {
         initComponents();
+        cardLayout = new CardLayout();
+        menuPanel.setLayout(cardLayout);
     }
+    
+    public CardLayout getCardLayout() {
+        return cardLayout;
+    }
+    
+    public Object getBtnLapPengajuan() {
+        return btnLapPengajuan;
+    }
+    
+    public Object getBtnExit() {
+        return btnExit;
+    }
+    
+    public Object getBtnLihatLap() {
+        return btnLihatLap;
+    }
+    
+    public void setStatusBar(String s) {
+        txStatus.setText(s);
+    }
+    
+    public void setGreetings(String s) {
+        txGreetings.setText(s);
+    }
+    
+    public void setTittle(String s) {
+        txTittle.setText(s);
+    }
+    
+    public void reset() {
+        txStatus.setText("");
+        txGreetings.setText("");
+        txTittle.setText("");
+    }
+    
+    public void addListener(ActionListener e) {
+        btnLapPengajuan.addActionListener(e);
+        btnLihatLap.addActionListener(e);
+        btnExit.addActionListener(e);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,60 +77,60 @@ public class dasboardPelapor extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        txTittle = new javax.swing.JTextField();
+        menuPanel = new javax.swing.JPanel();
+        txGreetings = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txStatus = new javax.swing.JTextArea();
+        btnLapPengajuan = new javax.swing.JButton();
+        btnLihatLap = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(193, 57, 43));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        txTittle.setEditable(false);
+        txTittle.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        menuPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 446, Short.MAX_VALUE)
         );
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(193, 57, 43));
+        txGreetings.setEditable(false);
+        txGreetings.setBackground(new java.awt.Color(193, 57, 43));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(193, 57, 43));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txStatus.setEditable(false);
+        txStatus.setBackground(new java.awt.Color(193, 57, 43));
+        txStatus.setColumns(20);
+        txStatus.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        txStatus.setLineWrap(true);
+        txStatus.setRows(5);
+        jScrollPane1.setViewportView(txStatus);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/022 Document Add (2).png"))); // NOI18N
-        jButton1.setText("LAPORAN PENGAJUAN");
+        btnLapPengajuan.setBackground(new java.awt.Color(255, 255, 255));
+        btnLapPengajuan.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        btnLapPengajuan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/022 Document Add (2).png"))); // NOI18N
+        btnLapPengajuan.setText("LAPORAN PENGAJUAN");
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/108 Bookmark (2).png"))); // NOI18N
-        jButton2.setText("LIHAT LAPORAN");
+        btnLihatLap.setBackground(new java.awt.Color(255, 255, 255));
+        btnLihatLap.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        btnLihatLap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/108 Bookmark (2).png"))); // NOI18N
+        btnLihatLap.setText("LIHAT LAPORAN");
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/147 RoundedActionRight (2).png"))); // NOI18N
-        jButton3.setText("KELUAR");
+        btnExit.setBackground(new java.awt.Color(255, 255, 255));
+        btnExit.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/147 RoundedActionRight (2).png"))); // NOI18N
+        btnExit.setText("KELUAR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,21 +139,21 @@ public class dasboardPelapor extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txGreetings, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(btnLapPengajuan)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2)
+                                .addComponent(btnLihatLap)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3)))))
+                                .addComponent(btnExit)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -114,16 +163,16 @@ public class dasboardPelapor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txGreetings, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnLapPengajuan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLihatLap, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -177,14 +226,16 @@ public class dasboardPelapor extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnLapPengajuan;
+    private javax.swing.JButton btnLihatLap;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel menuPanel;
+    private javax.swing.JTextField txGreetings;
+    private javax.swing.JTextArea txStatus;
+    private javax.swing.JTextField txTittle;
     // End of variables declaration//GEN-END:variables
+
+    
 }

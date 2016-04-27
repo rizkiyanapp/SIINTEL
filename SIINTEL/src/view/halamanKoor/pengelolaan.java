@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.halamanManager;
+package view.halamanKoor;
 
 import java.awt.event.ActionListener;
+import view.halamanManager.*;
 
 /**
  *
  * @author NANON
  */
-public class lapMasuk extends javax.swing.JPanel {
+public class pengelolaan extends javax.swing.JPanel {
 
     /**
      * Creates new form lapMasuk
      */
-    public lapMasuk() {
+    public pengelolaan() {
         initComponents();
     }
     
@@ -28,8 +29,8 @@ public class lapMasuk extends javax.swing.JPanel {
         return btnTolak;
     }
     
-    public Object getBtnSetujui() {
-        return btnSetujui;
+    public Object getBtnAjukan() {
+        return btnAjukan;
     }
     
     public void setListLap(String[] list) {
@@ -67,7 +68,7 @@ public class lapMasuk extends javax.swing.JPanel {
     public void addListener(ActionListener e) {
         btnRefresh.addActionListener(e);
         btnTolak.addActionListener(e);
-        btnSetujui.addActionListener(e);
+        btnAjukan.addActionListener(e);
     }
 
     /**
@@ -94,7 +95,7 @@ public class lapMasuk extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txDetail = new javax.swing.JTextArea();
-        btnSetujui = new javax.swing.JButton();
+        btnAjukan = new javax.swing.JButton();
         btnTolak = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -128,7 +129,7 @@ public class lapMasuk extends javax.swing.JPanel {
         txDetail.setRows(5);
         jScrollPane2.setViewportView(txDetail);
 
-        btnSetujui.setText("SETUJUI");
+        btnAjukan.setText("AJUKAN PERMINTAAN");
 
         btnTolak.setText("TOLAK");
 
@@ -154,16 +155,15 @@ public class lapMasuk extends javax.swing.JPanel {
                             .addComponent(txTipeLap)))
                     .addComponent(jScrollPane1)
                     .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(btnSetujui, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTolak, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel6)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnTolak, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnAjukan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
@@ -184,8 +184,8 @@ public class lapMasuk extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txTipeLap, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSetujui, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTolak, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnTolak, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAjukan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -204,8 +204,8 @@ public class lapMasuk extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAjukan;
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JButton btnSetujui;
     private javax.swing.JButton btnTolak;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
