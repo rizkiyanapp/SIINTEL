@@ -12,37 +12,37 @@ import java.util.Date;
  *
  * @author Async
  */
-public class KoorInventaris extends Employee{
+public class KoorInventaris extends Employee {
 
-    private String type = "Koordinator Inventaris";
-    private ArrayList<Laporan> berkas;
+    
+    private ArrayList<Laporan> listBerkas;
 
     public KoorInventaris(String nama, Date birthday, String email, String username, String password, String NIP) {
-        super(nama, birthday, email, username, password, NIP);
+        super(nama, birthday, email, username, password, NIP, "Koordinator Inventaris");
     }
-
-    //private ArrayList<Laporan> laporan;
-
+    
+    public void assetInputed(Laporan lap) {
+        lap.setStatKoor(true);
+    }
+    
     public void addBerkas(Laporan lap) {
-        Laporan lpr = lap;
-        berkas.add(lap);
-        
+        listBerkas.add(lap);
     }
 
     public Laporan getBerkasByIndex(int idx) {
-        try {
-            return berkas.get(idx);
-        } catch (Exception e) {
-            return null; //Jika tidak ditemukan; indexoutofbonds
-        }
+        return listBerkas.get(idx);
     }
 
     public Laporan getBerkasById(String idLaporan) {
-        for (Laporan lpr : berkas) {
+        for (Laporan lpr : listBerkas) {
             if (lpr.getIdLaporan().equals(idLaporan)) {
                 return lpr;
             }
         }
-        return null; //Jika tidak ditemukan
+        return null;
+    }
+
+    public ArrayList<Laporan> getListBerkas() {
+        return listBerkas;
     }
 }

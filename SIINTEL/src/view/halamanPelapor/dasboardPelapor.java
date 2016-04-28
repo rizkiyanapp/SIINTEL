@@ -7,6 +7,7 @@ package view.halamanPelapor;
 
 import java.awt.CardLayout;
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 
 /**
  *
@@ -28,6 +29,10 @@ public class dasboardPelapor extends javax.swing.JFrame {
     
     public CardLayout getCardLayout() {
         return cardLayout;
+    }
+    
+    public JPanel getMenuPanel() {
+        return menuPanel;
     }
     
     public Object getBtnLapPengajuan() {

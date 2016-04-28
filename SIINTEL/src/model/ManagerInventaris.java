@@ -11,17 +11,13 @@ import java.util.Date;
  *
  * @author Async
  */
-public class ManagerInventaris extends Employee{
-    private String type = "Manager Inventaris";
+public class ManagerInventaris extends Employee {
 
     public ManagerInventaris(String nama, Date birthday, String email, String username, String password, String NIP) {
-        super(nama, birthday, email, username, password, NIP);
+        super(nama, birthday, email, username, password, NIP, "Manager Inventaris");
     }
 
-    public void accLaporan(Laporan lap,boolean accManager){
-        if (accManager==true){
-            lap.setAcc(accManager);
-            lap.setStatKoor(accManager);
-        }
+    public void accLaporan(Laporan lap) {
+        lap.setAcc(true);
     }
 }

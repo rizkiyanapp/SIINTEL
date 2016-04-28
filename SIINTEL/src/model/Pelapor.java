@@ -12,41 +12,43 @@ import java.util.Date;
  *
  * @author Async
  */
-public class Pelapor extends Employee{
-    private String type="Pelapor";
-    private ArrayList<Laporan> laporan;
+public class Pelapor extends Employee {
+
+    private ArrayList<Laporan> listLap;
     private static int nPelapor;
 
     public Pelapor(String nama, Date birthday, String email, String username, String password, String NIP) {
-        super(nama, birthday, email, username, password, NIP);
+        super(nama, birthday, email, username, password, NIP, "Pelapor");
+        nPelapor++;
     }
-    
-    public void createLaporan(String idLaporan, Date date, String barang, int qty, String detail, int nLaporan, String lokasi,boolean acc){
-        Laporan lpr;
-        //Object created di dalam method (komposisi)
-        String id = Integer.toString(laporan.size() + 1);
-        lpr =new Laporan(idLaporan,date,barang,qty,detail,nLaporan,lokasi,acc);
-        //Insert it to array list
-        laporan.add(lpr);
+
+    public void createLaporan(String type, Date date, String asset, int qty, String location, String detail) {
+        Laporan lap = new Laporan(type, date, asset, qty, location, detail);
+        listLap.add(lap);
     }
-    
-    public Laporan getlaporanByIndex(int idx){
-        try {
-            return laporan.get(idx);
-        } catch (Exception e) {
-            return null; //Jika tidak ditemukan
-        }
+
+    public static int getnPelapor() {
+        return nPelapor;
     }
-    
-    public Laporan getLaporanById(String id){
-        for(Laporan lpr : laporan){
-            if(lpr.getIdLaporan()== id)
+
+    public static void setnPelapor(int nPelapor) {
+        Pelapor.nPelapor = nPelapor;
+    }
+
+    public Laporan getlaporanByIndex(int idx) {
+        return listLap.get(idx);
+    }
+
+    public Laporan getLaporanById(String id) {
+        for (Laporan lpr : listLap) {
+            if (lpr.getIdLaporan().equals(id)) {
                 return lpr;
+            }
         }
-        return null; //Jika tidak ditemukan
+        return null;
     }
-    
-    public ArrayList<Laporan> getListLaporan(){
-        return laporan;
+
+    public ArrayList<Laporan> getListLaporan() {
+        return listLap;
     }
 }

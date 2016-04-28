@@ -46,10 +46,15 @@ public class mainPage extends javax.swing.JFrame {
         return btnExit;
     }
     
+    public Object getBtnInfo(){
+        return btnInfo;
+    }
+    
     public void addListener(ActionListener e) {
         btnSignIn.addActionListener(e);
         btnSignUp.addActionListener(e);
         btnExit.addActionListener(e);
+        btnInfo.addActionListener(e);
     }
     
     /**
@@ -68,13 +73,19 @@ public class mainPage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnExit = new javax.swing.JButton();
         btnSignUp = new javax.swing.JButton();
+        btnInfo = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainPanel.setMinimumSize(new java.awt.Dimension(800, 600));
+        mainPanel.setPreferredSize(new java.awt.Dimension(802, 600));
+        mainPanel.setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        mainPanel.add(jLabel1);
+        jLabel1.setBounds(285, 33, 250, 64);
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -87,74 +98,51 @@ public class mainPage extends javax.swing.JFrame {
             .addGap(0, 400, Short.MAX_VALUE)
         );
 
-        btnSignIn.setBackground(new java.awt.Color(0, 0, 0));
-        btnSignIn.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        btnSignIn.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignIn.setText("MASUK");
+        mainPanel.add(menuPanel);
+        menuPanel.setBounds(199, 115, 400, 400);
 
+        btnSignIn.setBackground(new java.awt.Color(255, 255, 255));
+        btnSignIn.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        btnSignIn.setText("MASUK");
+        mainPanel.add(btnSignIn);
+        btnSignIn.setBounds(199, 521, 190, 40);
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Copyright 2016");
+        mainPanel.add(jLabel2);
+        jLabel2.setBounds(350, 570, 110, 14);
 
         btnExit.setBackground(new java.awt.Color(255, 0, 0));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/060 Off.png"))); // NOI18N
-        btnExit.setText("Exit");
+        btnExit.setText("EXIT");
+        mainPanel.add(btnExit);
+        btnExit.setBounds(680, 30, 88, 39);
 
-        btnSignUp.setBackground(new java.awt.Color(0, 0, 0));
+        btnSignUp.setBackground(new java.awt.Color(255, 255, 255));
         btnSignUp.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
         btnSignUp.setText("DAFTAR");
+        mainPanel.add(btnSignUp);
+        btnSignUp.setBounds(409, 521, 190, 40);
 
-        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
-        mainPanel.setLayout(mainPanelLayout);
-        mainPanelLayout.setHorizontalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(285, 285, 285)
-                        .addComponent(jLabel1)
-                        .addGap(158, 158, 158)
-                        .addComponent(btnExit))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(362, 362, 362)
-                        .addComponent(jLabel2))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(btnSignIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(36, 36, 36))
-        );
-        mainPanelLayout.setVerticalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1))
-                    .addComponent(btnExit))
-                .addGap(11, 11, 11)
-                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2))
-        );
+        btnInfo.setBackground(new java.awt.Color(255, 255, 255));
+        btnInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/info.png"))); // NOI18N
+        btnInfo.setText("INFO");
+        mainPanel.add(btnInfo);
+        btnInfo.setBounds(680, 80, 90, 40);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backgroundMenu.jpg"))); // NOI18N
+        mainPanel.add(jLabel3);
+        jLabel3.setBounds(0, 0, 800, 589);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -197,10 +185,12 @@ public class mainPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnSignIn;
     private javax.swing.JButton btnSignUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menuPanel;
     // End of variables declaration//GEN-END:variables

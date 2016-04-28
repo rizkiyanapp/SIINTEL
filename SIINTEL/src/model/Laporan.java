@@ -13,28 +13,29 @@ import java.util.Date;
  * @author Async
  */
 public class Laporan {
+
     private String idLaporan;
     private String type;
     private Date date;
     private boolean acc;
-    private boolean statKoor=false;
-    private String barang;
+    private boolean statKoor;
+    private String asset;
     private int qty;
     private String detail;
-    private int nLaporan;
-    private String lokasi;
+    private String location;
+    private static int nLaporan;
 
-    public Laporan(String idLaporan, Date date, String barang, int qty, String detail, int nLaporan, String lokasi,boolean acc) {
-        this.idLaporan = idLaporan;
+    public Laporan(String type, Date date, String asset, int qty, String location, String detail) {
+        this.type = type;
         this.date = date;
-        this.barang = barang;
+        this.asset = asset;
         this.qty = qty;
+        this.location = location;
         this.detail = detail;
-        this.nLaporan = nLaporan;
-        this.lokasi = lokasi;
-        this.acc=false;
+        this.idLaporan = "LAP-" + nLaporan++;
+        setAcc(false);
+        setStatKoor(false);
     }
-    
 
     public boolean isAcc() {
         return acc;
@@ -60,20 +61,16 @@ public class Laporan {
         this.qty = qty;
     }
 
-    public String getLokasi() {
-        return lokasi;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLokasi(String lokasi) {
-        this.lokasi = lokasi;
+    public void setLocation(String lokasi) {
+        this.location = lokasi;
     }
 
     public String getIdLaporan() {
         return idLaporan;
-    }
-
-    public void setIdLaporan(String idLaporan) {
-        this.idLaporan = idLaporan;
     }
 
     public String getType() {
@@ -92,15 +89,13 @@ public class Laporan {
         this.date = date;
     }
 
-    public String getBarang() {
-        return barang;
+    public String getAsset() {
+        return asset;
     }
 
-    public void setBarang(String barang) {
-        this.barang = barang;
+    public void setAsset(String barang) {
+        this.asset = barang;
     }
-
-    
 
     public String getDetail() {
         return detail;
@@ -117,6 +112,5 @@ public class Laporan {
     public void setnLaporan(int nLaporan) {
         this.nLaporan = nLaporan;
     }
-    
-    
+
 }

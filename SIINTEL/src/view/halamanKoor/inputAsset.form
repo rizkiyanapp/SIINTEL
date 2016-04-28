@@ -62,7 +62,6 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -70,7 +69,6 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnInput" alignment="1" max="32767" attributes="0"/>
                           <Component id="txLokasiAsset" max="32767" attributes="0"/>
-                          <Component id="spinQty" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txMerk" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" alignment="1" pref="279" max="32767" attributes="0"/>
                       </Group>
@@ -99,11 +97,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txMerk" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="spinQty" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -227,13 +220,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txNama">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="QTY"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JSpinner" name="spinQty">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>

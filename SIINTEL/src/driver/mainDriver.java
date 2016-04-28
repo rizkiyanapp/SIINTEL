@@ -5,7 +5,7 @@
  */
 package driver;
 
-import controller.ControllerHalamanMasuk;
+import controller.Controller;
 import model.Application;
 
 /**
@@ -19,7 +19,7 @@ public class mainDriver {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new ControllerHalamanMasuk(new Application());
+        new Controller(new Application());
     }
     
 }

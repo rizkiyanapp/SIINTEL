@@ -118,142 +118,107 @@ public class signUpPage extends javax.swing.JPanel {
         spinMonth = new javax.swing.JSpinner();
         spinYear = new javax.swing.JSpinner();
         btnSignUp = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(9, 131, 109));
+        setBackground(new java.awt.Color(102, 102, 102));
+        setPreferredSize(new java.awt.Dimension(400, 400));
+        setLayout(null);
 
         cbType.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         cbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Silahkan pilih jenis...", "Manager Inventaris", "Koordinator Inventaris", "Pelapor" }));
+        add(cbType);
+        cbType.setBounds(117, 11, 264, 30);
+        add(txUsername);
+        txUsername.setBounds(117, 52, 264, 30);
+        add(txPassword);
+        txPassword.setBounds(117, 88, 264, 30);
+        add(txCPassword);
+        txCPassword.setBounds(117, 124, 264, 30);
+        add(txNIP);
+        txNIP.setBounds(117, 172, 264, 30);
+        add(txName);
+        txName.setBounds(117, 208, 264, 30);
+        add(txEmail);
+        txEmail.setBounds(117, 280, 264, 30);
 
         spinDay.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
+        add(spinDay);
+        spinDay.setBounds(117, 244, 39, 30);
+        add(txNumber);
+        txNumber.setBounds(117, 316, 264, 30);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Daftar sebagai");
+        add(jLabel1);
+        jLabel1.setBounds(26, 18, 73, 16);
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username");
+        add(jLabel2);
+        jLabel2.setBounds(48, 60, 51, 16);
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password");
+        add(jLabel3);
+        jLabel3.setBounds(52, 96, 47, 16);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Confirm Password");
+        add(jLabel4);
+        jLabel4.setBounds(10, 132, 89, 16);
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("NIP");
+        add(jLabel5);
+        jLabel5.setBounds(82, 180, 17, 16);
 
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nama");
+        add(jLabel6);
+        jLabel6.setBounds(69, 216, 30, 16);
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Tanggal Lahir");
+        add(jLabel7);
+        jLabel7.setBounds(33, 252, 66, 16);
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Email");
+        add(jLabel8);
+        jLabel8.setBounds(71, 288, 28, 16);
 
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nomor Telp.");
+        add(jLabel9);
+        jLabel9.setBounds(38, 324, 61, 16);
 
         spinMonth.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
+        add(spinMonth);
+        spinMonth.setBounds(171, 244, 39, 30);
 
         spinYear.setModel(new javax.swing.SpinnerNumberModel(1970, 1970, 2016, 1));
+        add(spinYear);
+        spinYear.setBounds(225, 244, 63, 30);
 
         btnSignUp.setBackground(new java.awt.Color(255, 255, 255));
         btnSignUp.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         btnSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new/Add User Male Filled-16 (2).png"))); // NOI18N
         btnSignUp.setText("DAFTAR");
+        add(btnSignUp);
+        btnSignUp.setBounds(10, 357, 371, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txNumber)
-                            .addComponent(txUsername)
-                            .addComponent(cbType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txPassword)
-                            .addComponent(txCPassword)
-                            .addComponent(txNIP)
-                            .addComponent(txName)
-                            .addComponent(txEmail)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(spinDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(spinMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(spinYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 96, Short.MAX_VALUE)))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbType, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txCPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(spinDay, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(spinMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spinYear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backregis.jpg"))); // NOI18N
+        add(jLabel10);
+        jLabel10.setBounds(0, 0, 400, 400);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -261,6 +226,7 @@ public class signUpPage extends javax.swing.JPanel {
     private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cbType;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

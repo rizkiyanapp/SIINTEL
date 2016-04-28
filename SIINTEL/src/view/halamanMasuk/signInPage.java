@@ -52,58 +52,36 @@ public class signInPage extends javax.swing.JPanel {
 
         txUsername = new javax.swing.JTextField();
         txPassword = new javax.swing.JPasswordField();
+        btnSignIn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btnSignIn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(9, 131, 109));
-
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Username");
-
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password");
+        setLayout(null);
+        add(txUsername);
+        txUsername.setBounds(90, 120, 280, 44);
+        add(txPassword);
+        txPassword.setBounds(90, 190, 280, 44);
 
         btnSignIn.setBackground(new java.awt.Color(255, 255, 255));
         btnSignIn.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         btnSignIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new/Checked User Male Filled-16 (2).png"))); // NOI18N
         btnSignIn.setText("MASUK");
+        add(btnSignIn);
+        btnSignIn.setBounds(40, 270, 330, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSignIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
-                            .addComponent(txPassword))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/userimg.jpg"))); // NOI18N
+        add(jLabel1);
+        jLabel1.setBounds(40, 120, 45, 45);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/passimg.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(40, 190, 45, 45);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backregis.jpg"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 400, 400);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -111,6 +89,7 @@ public class signInPage extends javax.swing.JPanel {
     private javax.swing.JButton btnSignIn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField txPassword;
     private javax.swing.JTextField txUsername;
     // End of variables declaration//GEN-END:variables

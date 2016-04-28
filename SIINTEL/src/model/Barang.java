@@ -13,62 +13,82 @@ import java.util.Date;
  */
 public class Barang {
     private String IdBarang;
-    private String namaBarang;
+    private String name;
     private String merk;
-    private int jumlah;
-    private Date tanggalPembelian;
-    private boolean kondisi = true;
-    private String keterangan;
-    private String lokasi;
+    private Date buyDate;
+    private boolean condition;
+    private String detail;
+    private String location;
+    private static int nBarang;
 
-    public Barang(String IdBarang, String namaBarang, Date tanggalPembelian, String keterangan) {
-        this.IdBarang = IdBarang;
-        this.namaBarang = namaBarang;
-        this.tanggalPembelian = tanggalPembelian;
-        this.keterangan = keterangan;
+    public Barang(Date buyDate, String name, String merk, String location, String detail) {
+        this.buyDate = buyDate;
+        this.name = name;
+        this.merk = merk;
+        this.location = location;
+        this.detail = detail;
+        this.IdBarang = "BRG-" + nBarang++;
+        setCondition(true);
     }
 
+    public String getMerk() {
+        return merk;
+    }
+
+    public void setMerk(String merk) {
+        this.merk = merk;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public static int getnBarang() {
+        return nBarang;
+    }
+
+    public static void setnBarang(int nBarang) {
+        Barang.nBarang = nBarang;
+    }
     
     public String getIdBarang() {
         return IdBarang;
     }
 
-    public void setIdBarang(String IdBarang) {
-        this.IdBarang = IdBarang;
+    public String getName() {
+        return name;
     }
 
-
-
-    public String getNamaBarang() {
-        return namaBarang;
+    public void setName(String namaBarang) {
+        this.name = namaBarang;
     }
 
-    public void setNamaBarang(String namaBarang) {
-        this.namaBarang = namaBarang;
+    public Date getBuyDate() {
+        return buyDate;
     }
 
-    public Date getTanggalPembelian() {
-        return tanggalPembelian;
+    public void setBuyDate(Date tanggalPembelian) {
+        this.buyDate = tanggalPembelian;
     }
 
-    public void setTanggalPembelian(Date tanggalPembelian) {
-        this.tanggalPembelian = tanggalPembelian;
+    public boolean isCondition() {
+        return condition;
     }
 
-    public boolean isKondisi() {
-        return kondisi;
+    public void setCondition(boolean kondisi) {
+        this.condition = kondisi;
     }
 
-    public void setKondisi(boolean kondisi) {
-        this.kondisi = kondisi;
+    public String getDetail() {
+        return detail;
     }
 
-    public String getKeterangan() {
-        return keterangan;
-    }
-
-    public void setKeterangan(String keterangan) {
-        this.keterangan = keterangan;
+    public void setDetail(String keterangan) {
+        this.detail = keterangan;
     }
     
 }

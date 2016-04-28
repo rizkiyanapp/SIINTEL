@@ -62,11 +62,7 @@ public class inputAsset extends javax.swing.JPanel {
     public String getMerk() {
         return txMerk.getText();
     }
-    
-    public int getQty() {
-        return (Integer) spinQty.getValue();
-    }
-    
+        
     public String getLokasi() {
         return txLokasiAsset.getText();
     }
@@ -82,14 +78,12 @@ public class inputAsset extends javax.swing.JPanel {
         txLokasi.setText("");
         txNama.setText("");
         txMerk.setText("");
-        spinQty.setValue(0);
         txLokasiAsset.setText("");
         txDetail.setText("");
     }
     
     public void addAdapter(MouseListener e) {
         spinDate.addMouseListener(e);
-        spinQty.addMouseListener(e);
     }
     
     public void addListener(ActionListener e) {
@@ -120,8 +114,6 @@ public class inputAsset extends javax.swing.JPanel {
         btnRefresh = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txNama = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        spinQty = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
         txLokasiAsset = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -158,8 +150,6 @@ public class inputAsset extends javax.swing.JPanel {
         btnRefresh.setText("REFRESH");
 
         jLabel6.setText("NAMA");
-
-        jLabel7.setText("QTY");
 
         jLabel8.setText("LOKASI");
 
@@ -214,14 +204,12 @@ public class inputAsset extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel7)
                             .addComponent(jLabel9)
                             .addComponent(jLabel11))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txLokasiAsset)
-                            .addComponent(spinQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txMerk)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))))
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -243,10 +231,6 @@ public class inputAsset extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txMerk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(spinQty, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -295,14 +279,12 @@ public class inputAsset extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listLap;
     private javax.swing.JSpinner spinDate;
-    private javax.swing.JSpinner spinQty;
     private javax.swing.JTextField txAsset;
     private javax.swing.JTextArea txDetail;
     private javax.swing.JTextField txLokasi;
