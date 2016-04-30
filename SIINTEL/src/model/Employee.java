@@ -85,5 +85,10 @@ public abstract class Employee {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" + "name=" + name + ", birth=" + birth + ", email=" + email + ", username=" + username + ", password=" + password + ", NIP=" + NIP + ", type=" + type + '}';
+    }
         
 }

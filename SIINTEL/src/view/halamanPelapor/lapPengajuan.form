@@ -161,7 +161,17 @@
         <Component class="javax.swing.JList" name="listAsset">
           <Properties>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-              <StringArray count="0"/>
+              <StringArray count="9">
+                <StringItem index="0" value="Kursi Ceetoz"/>
+                <StringItem index="1" value="Meja Dosen"/>
+                <StringItem index="2" value="Proyektor"/>
+                <StringItem index="3" value="Kabel HDMI"/>
+                <StringItem index="4" value="PC Desktop"/>
+                <StringItem index="5" value="TV"/>
+                <StringItem index="6" value="Speaker"/>
+                <StringItem index="7" value="Terminal"/>
+                <StringItem index="8" value="Kipas Angin"/>
+              </StringArray>
             </Property>
           </Properties>
           <AuxValues>
@@ -188,13 +198,18 @@
     <Component class="javax.swing.JComboBox" name="cbLokasi">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="11">
             <StringItem index="0" value="Pilih lokasi asset..."/>
             <StringItem index="1" value="E101"/>
             <StringItem index="2" value="E102"/>
             <StringItem index="3" value="E103"/>
             <StringItem index="4" value="E104"/>
             <StringItem index="5" value="E105"/>
+            <StringItem index="6" value="KU3.03.01"/>
+            <StringItem index="7" value="KU3.03.02"/>
+            <StringItem index="8" value="KU3.03.03"/>
+            <StringItem index="9" value="KU3.03.04"/>
+            <StringItem index="10" value="KU3.03.05"/>
           </StringArray>
         </Property>
       </Properties>

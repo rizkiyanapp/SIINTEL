@@ -65,6 +65,10 @@ public class signUpPage extends javax.swing.JPanel {
         return txNumber.getText();
     }
     
+    public int getType() {
+        return cbType.getSelectedIndex();
+    }
+    
     public void reset() {
         cbType.setSelectedIndex(0);
         txUsername.setText("");

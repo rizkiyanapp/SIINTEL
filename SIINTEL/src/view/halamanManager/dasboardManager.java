@@ -117,12 +117,14 @@ public class dasboardManager extends javax.swing.JFrame {
         txStatus.setBackground(new java.awt.Color(52, 73, 94));
         txStatus.setColumns(20);
         txStatus.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        txStatus.setForeground(new java.awt.Color(255, 255, 255));
         txStatus.setLineWrap(true);
         txStatus.setRows(5);
         jScrollPane1.setViewportView(txStatus);
 
         txGreetings.setEditable(false);
         txGreetings.setBackground(new java.awt.Color(52, 73, 94));
+        txGreetings.setForeground(new java.awt.Color(255, 255, 255));
 
         btnLapMasuk.setBackground(new java.awt.Color(255, 255, 255));
         btnLapMasuk.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N

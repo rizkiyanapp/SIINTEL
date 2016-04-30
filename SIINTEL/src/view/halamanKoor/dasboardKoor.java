@@ -115,6 +115,7 @@ public class dasboardKoor extends javax.swing.JFrame {
         txStatus.setBackground(new java.awt.Color(0, 55, 55));
         txStatus.setColumns(20);
         txStatus.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        txStatus.setForeground(new java.awt.Color(255, 255, 255));
         txStatus.setLineWrap(true);
         txStatus.setRows(5);
         jScrollPane1.setViewportView(txStatus);
@@ -124,6 +125,7 @@ public class dasboardKoor extends javax.swing.JFrame {
 
         txGreetings.setEditable(false);
         txGreetings.setBackground(new java.awt.Color(0, 55, 55));
+        txGreetings.setForeground(new java.awt.Color(255, 255, 255));
 
         btnExit.setBackground(new java.awt.Color(255, 255, 255));
         btnExit.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N

@@ -14,6 +14,7 @@ import java.util.Date;
  */
 public class Application {
 
+    private ArrayList<Employee> listAllUser;
     private ArrayList<Barang> listAsset;
     private ArrayList<Laporan> listLaporan;
     private ArrayList<Pelapor> listPelapor;
@@ -21,6 +22,7 @@ public class Application {
     private KoorInventaris koor;
 
     public Application() {
+        listAllUser = new ArrayList();
         listAsset = new ArrayList();
         listLaporan = new ArrayList();
         listPelapor = new ArrayList();
@@ -28,14 +30,18 @@ public class Application {
 
     public void addManager(String nama, Date birthday, String email, String username, String password, String NIP) {
         manager = new ManagerInventaris(nama, birthday, email, username, password, NIP);
+        listAllUser.add(manager);
     }
 
     public void addKoor(String nama, Date birthday, String email, String username, String password, String NIP) {
         koor = new KoorInventaris(nama, birthday, email, username, password, NIP);
+        listAllUser.add(koor);
     }
 
     public void addPelapor(String nama, Date birthday, String email, String username, String password, String NIP) {
-        listPelapor.add(new Pelapor(nama, birthday, email, username, password, NIP));
+        Pelapor pel = new Pelapor(nama, birthday, email, username, password, NIP);
+        listPelapor.add(pel);
+        listAllUser.add(pel);
     }
 
     public ManagerInventaris getManager(String username, String password) {
@@ -66,22 +72,53 @@ public class Application {
     public void addAsset(Date buyDate, String name, String merk, String location, String detail) {
         listAsset.add(new Barang(buyDate, name, merk, location, detail));
     }
-    
+
     public Barang getAssetById(String idBarang) {
         for (Barang b : listAsset) {
-            if(b.getIdBarang().equals(idBarang)) {
+            if (b.getIdBarang().equals(idBarang)) {
                 return b;
             }
         }
         return null;
     }
-    
+
     public Barang getAssetByIndex(int idx) {
         return listAsset.get(idx);
     }
-    
+
     public void addLaporan(Laporan lap) {
         listLaporan.add(lap);
+    }
+
+    public Laporan getLaporanById(String idLaporan) {
+        for (Laporan lap : listLaporan) {
+            if (lap.getIdLaporan().equals(idLaporan)) {
+                return lap;
+            }
+        }
+        return null;
+    }
+
+    public Laporan getLaporanByIndex(int idx) {
+        return listLaporan.get(idx);
+    }
+    
+    public boolean searchEmployee(String username) {
+        for(Employee e : listAllUser) {
+            if(e.getUsername().equals(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Employee getEmployee(String username, String password) {
+        for (Employee e : listAllUser) {
+            if (e.getUsername().equals(username) && e.getPassword().equals(password)) {
+                return e;
+            }
+        }
+        return null;
     }
 
 }

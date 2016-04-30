@@ -47,7 +47,7 @@ public class dasboardPelapor extends javax.swing.JFrame {
         return btnLihatLap;
     }
     
-    public void setStatusBar(String s) {
+    public void setStatus(String s) {
         txStatus.setText(s);
     }
     
@@ -113,11 +113,13 @@ public class dasboardPelapor extends javax.swing.JFrame {
 
         txGreetings.setEditable(false);
         txGreetings.setBackground(new java.awt.Color(193, 57, 43));
+        txGreetings.setForeground(new java.awt.Color(255, 255, 255));
 
         txStatus.setEditable(false);
         txStatus.setBackground(new java.awt.Color(193, 57, 43));
         txStatus.setColumns(20);
         txStatus.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        txStatus.setForeground(new java.awt.Color(255, 255, 255));
         txStatus.setLineWrap(true);
         txStatus.setRows(5);
         jScrollPane1.setViewportView(txStatus);
