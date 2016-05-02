@@ -6,6 +6,7 @@
 package view.halamanKoor;
 
 import java.awt.event.ActionListener;
+import javax.swing.JTable;
 
 /**
  *
@@ -26,6 +27,10 @@ public class lapAsset extends javax.swing.JPanel {
     
     public void addListener(ActionListener e) {
         btnRefresh.addActionListener(e);
+    }
+    
+    public JTable getTableAsset() {
+        return tableAsset;
     }
 
     /**
@@ -49,14 +54,30 @@ public class lapAsset extends javax.swing.JPanel {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Tanggal Pembuatan", "ID", "Nama", "Merk", "Qty", "Lokasi"
+                "Nomor", "Tanggal Pembuatan", "ID", "Nama", "Merk", "Lokasi"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false

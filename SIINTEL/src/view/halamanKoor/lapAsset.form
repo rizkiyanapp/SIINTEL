@@ -64,12 +64,12 @@
         <Component class="javax.swing.JTable" name="tableAsset">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="6" rowCount="4">
-                <Column editable="false" title="Tanggal Pembuatan" type="java.lang.Object"/>
+              <Table columnCount="6" rowCount="20">
+                <Column editable="false" title="Nomor" type="java.lang.String"/>
+                <Column editable="false" title="Tanggal Pembuatan" type="java.lang.String"/>
                 <Column editable="false" title="ID" type="java.lang.String"/>
                 <Column editable="false" title="Nama" type="java.lang.String"/>
                 <Column editable="false" title="Merk" type="java.lang.String"/>
-                <Column editable="false" title="Qty" type="java.lang.Integer"/>
                 <Column editable="false" title="Lokasi" type="java.lang.String"/>
               </Table>
             </Property>

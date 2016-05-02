@@ -6,6 +6,7 @@
 package view.halamanKoor;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import view.halamanManager.*;
 
 /**
@@ -57,12 +58,20 @@ public class pengelolaan extends javax.swing.JPanel {
         txDetail.setText(s);
     }
     
+    public String getSelectedLap() {
+        return listLap.getSelectedValue();
+    }
+    
     public void reset() {
         txTipeLap.setText("");
         txAsset.setText("");
         txQty.setText("");
         txLokasi.setText("");
         txDetail.setText("");
+    }
+    
+    public void addAdapter(MouseAdapter e) {
+        listLap.addMouseListener(e);
     }
     
     public void addListener(ActionListener e) {

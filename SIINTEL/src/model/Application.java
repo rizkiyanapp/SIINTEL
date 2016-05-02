@@ -145,11 +145,24 @@ public class Application {
         return null;
     }
 
+    public String[] getListLaporanInputAsset() {
+        ArrayList<String> list = new ArrayList();
+        for (Pelapor p : listPelapor) {
+            for (Laporan lap : p.getListLaporan()) {
+                if (lap.isAcc() && lap.isStatKoor() == false && lap.isTolakKoor() == false && lap.isAjukan() && lap.isTolakAcc() == false) {
+                    String s = lap.getDate().toString();
+                    list.add(s);
+                }
+            }
+        }
+        return (String[]) list.toArray(new String[list.size()]);
+    }
+    
     public String[] getListLaporanAll() {
         ArrayList<String> list = new ArrayList();
         for (Pelapor p : listPelapor) {
             for (Laporan lap : p.getListLaporan()) {
-                if (lap.isAcc() && lap.isStatKoor() == false) {
+                if (lap.isAcc() == false && lap.isStatKoor() == false && lap.isTolakKoor() == false && lap.isAjukan() == false && lap.isTolakAcc() == false) {
                     String s = lap.getDate().toString();
                     list.add(s);
                 }
@@ -167,5 +180,30 @@ public class Application {
             }
         }
         return null;
+    }
+
+    public ArrayList<Barang> getListAsset() {
+        return listAsset;
+    }
+    
+    public String[] getLaporanAjukan() {
+        ArrayList<String> list = new ArrayList();
+        for(Pelapor p : listPelapor) {
+            for(Laporan lap : p.getListLaporan()) {
+                if (lap.isAjukan() && lap.isAcc() == false && lap.isStatKoor() == false && lap.isTolakKoor() == false && lap.isTolakAcc() == false) {
+                    String s = lap.getDate().toString();
+                    list.add(s);
+                }
+            }
+        }
+        return (String[]) list.toArray(new String[list.size()]);
+    }
+    
+    public void addLaptoKoor(Laporan lap) {
+        koor.addBerkas(lap);
+    }
+    
+    public ArrayList<Laporan> getListBerkasKoor() {
+        return koor.getListBerkas();
     }
 }

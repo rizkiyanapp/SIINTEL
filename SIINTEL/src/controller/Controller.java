@@ -13,6 +13,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Application;
+import model.Barang;
 import model.Employee;
 import model.KoorInventaris;
 import model.Laporan;
@@ -64,6 +65,7 @@ public class Controller extends MouseAdapter implements ActionListener {
     private inputAsset ias;
     private pengelolaan peng;
     private lapAsset las;
+    private lapAsset lasK;
     private lapBerkas lab;
     private lapMasuk lam;
     private lapPengajuan laj;
@@ -82,6 +84,7 @@ public class Controller extends MouseAdapter implements ActionListener {
         ias = new inputAsset();
         peng = new pengelolaan();
         las = new lapAsset();
+        lasK = new lapAsset();
         lab = new lapBerkas();
         lam = new lapMasuk();
         laj = new lapPengajuan();
@@ -98,9 +101,12 @@ public class Controller extends MouseAdapter implements ActionListener {
         ias.addAdapter(this);
         ias.addListener(this);
         peng.addListener(this);
+        peng.addAdapter(this);
         las.addListener(this);
+        lasK.addListener(this);
         lab.addListener(this);
         lam.addListener(this);
+        lam.addAdapter(this);
         laj.addAdapter(this);
         laj.addListener(this);
         lip.addListener(this);
@@ -112,7 +118,7 @@ public class Controller extends MouseAdapter implements ActionListener {
         currentView = "Sign In Page";
 
         koorPanel = viewKoor.getMenuPanel();
-        koorPanel.add(las, "Laporan Asset Page");
+        koorPanel.add(lasK, "Laporan Asset Koor Page");
         koorPanel.add(ias, "Input Asset Page");
         koorPanel.add(peng, "Pengelolaan Page");
 
@@ -151,7 +157,8 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewInfo.dispose();
             view.setVisible(true);
         } else if (source.equals(viewKoor.getBtnAsset())) {
-            currentView = "Laporan Asset Page";
+            currentView = "Laporan Asset Koor Page";
+            viewKoor.setTittle("LAPORAN ASSET PAGE");
             viewKoor.getCardLayout().show(koorPanel, currentView);
         } else if (source.equals(viewKoor.getBtnExit())) {
             koor = null;
@@ -166,10 +173,14 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewKoor.getCardLayout().show(koorPanel, currentView);
             lap = null;
             ias.reset();
+            ias.setListLap(model.getListLaporanInputAsset());
         } else if (source.equals(viewKoor.getBtnPengelolaan())) {
             viewKoor.setTittle("PENGELOLAAN PAGE");
             currentView = "Pengelolaan Page";
             viewKoor.getCardLayout().show(koorPanel, currentView);
+            lap = null;
+            peng.reset();
+            peng.setListLap(model.getListLaporanAll());
         } else if (source.equals(viewManager.getBtnAsset())) {
             viewManager.setTittle("LAPORAN ASSET PAGE");
             currentView = "Laporan Asset Page";
@@ -189,6 +200,9 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewManager.setTittle("LAPORAN MASUK PAGE");
             currentView = "Laporan Masuk Page";
             viewManager.getCardLayout().show(managerPanel, currentView);
+            lap = null;
+            lam.reset();
+            lam.setListLap(model.getLaporanAjukan());
         } else if (source.equals(viewPelapor.getBtnExit())) {
             pelapor = null;
             JOptionPane.showMessageDialog(null, "Keluar.....");
@@ -206,6 +220,7 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewPelapor.getCardLayout().show(pelaporPanel, currentView);
             lap = null;
             lip.reset();
+            lip.setListLap(model.getListLaporanByPelapor(pelapor));
         }
 
         if (currentView.equals("Sign In Page")) {
@@ -305,7 +320,30 @@ public class Controller extends MouseAdapter implements ActionListener {
         } else if (currentView.equals(
                 "Laporan Asset Page")) {
             if (source.equals(las.getBtnRefresh())) {
-
+                int i = 0;
+                for (Barang b : model.getListAsset()) {
+                    las.getTableAsset().setValueAt(i + 1, i, 0);
+                    las.getTableAsset().setValueAt(b.getBuyDate(), i, 1);
+                    las.getTableAsset().setValueAt(b.getIdBarang(), i, 2);
+                    las.getTableAsset().setValueAt(b.getName(), i, 3);
+                    las.getTableAsset().setValueAt(b.getMerk(), i, 4);
+                    las.getTableAsset().setValueAt(b.getLocation(), i, 5);
+                    i++;
+                }
+            }
+        } else if (currentView.equals(
+                "Laporan Asset Koor Page")) {
+            if (source.equals(lasK.getBtnRefresh())) {
+                int i = 0;
+                for (Barang b : model.getListAsset()) {
+                    lasK.getTableAsset().setValueAt(i + 1, i, 0);
+                    lasK.getTableAsset().setValueAt(b.getBuyDate(), i, 1);
+                    lasK.getTableAsset().setValueAt(b.getIdBarang(), i, 2);
+                    lasK.getTableAsset().setValueAt(b.getName(), i, 3);
+                    lasK.getTableAsset().setValueAt(b.getMerk(), i, 4);
+                    lasK.getTableAsset().setValueAt(b.getLocation(), i, 5);
+                    i++;
+                }
             }
         } else if (currentView.equals(
                 "Input Asset Page")) {
@@ -318,35 +356,101 @@ public class Controller extends MouseAdapter implements ActionListener {
                 if (name.equals("") || merk.equals("") || location.equals("") || detail.equals("")) {
                     JOptionPane.showInternalMessageDialog(null, "Form tidak boleh kosong!");
                 } else {
-                    
+                    model.addAsset(date, name, merk, location, detail);
+                    JOptionPane.showMessageDialog(null, "Asset berhasil diinput");
+                    lap.setStatKoor(true);
+                    ias.reset();
+                    lap = null;
+                    ias.setListLap(model.getListLaporanInputAsset());
                 }
             } else if (source.equals(ias.getBtnRefresh())) {
-                ias.setListLap(model.getListLaporanAll());
+                ias.setListLap(model.getListLaporanInputAsset());
                 lap = null;
                 ias.reset();
             }
         } else if (currentView.equals(
                 "Pengelolaan Page")) {
             if (source.equals(peng.getBtnAjukan())) {
-
+                if (lap != null) {
+                    lap.setAjukan(true);
+                    JOptionPane.showMessageDialog(null, "Laporan berhasil diajukan");
+                    lap = null;
+                    peng.reset();
+                    peng.setListLap(model.getListLaporanAll());
+                } else {
+                    JOptionPane.showMessageDialog(null, "Silahkan pilih laporan");
+                    lap = null;
+                    peng.reset();
+                    peng.setListLap(model.getListLaporanAll());
+                }
             } else if (source.equals(peng.getBtnRefresh())) {
-
+                lap = null;
+                peng.setListLap(model.getListLaporanAll());
             } else if (source.equals(peng.getBtnTolak())) {
-
+                if (lap != null) {
+                    lap.setTolakKoor(true);
+                    JOptionPane.showMessageDialog(null, "Laporan berhasil ditolak");
+                    lap = null;
+                    peng.reset();
+                    peng.setListLap(model.getListLaporanAll());
+                } else {
+                    JOptionPane.showMessageDialog(null, "Silahkan pilih laporan");
+                    lap = null;
+                    peng.reset();
+                    peng.setListLap(model.getListLaporanAll());
+                }
             }
         } else if (currentView.equals(
                 "Laporan Berkas Page")) {
             if (source.equals(lab.getBtnRefresh())) {
-
+                int i = 0;
+                for (Laporan lap : model.getListBerkasKoor()) {
+                    lab.getTableBerkas().setValueAt(i + 1, i, 0);
+                    lab.getTableBerkas().setValueAt(lap.getDate(), i, 1);
+                    lab.getTableBerkas().setValueAt(lap.getType(), i, 2);
+                    lab.getTableBerkas().setValueAt(lap.getAsset(), i, 3);
+                    lab.getTableBerkas().setValueAt(lap.getQty(), i, 4);
+                    lab.getTableBerkas().setValueAt(lap.getLocation(), i, 5);
+                    if (lap.isStatKoor()) {
+                        lab.getTableBerkas().setValueAt("Sudah diinput", i, 6);
+                    } else {
+                        lab.getTableBerkas().setValueAt("Belum diinput", i, 6);
+                    }
+                    lab.getTableBerkas().setValueAt(lap.getDetail(), i, 7);
+                }
             }
         } else if (currentView.equals(
                 "Laporan Masuk Page")) {
             if (source.equals(lam.getBtnRefresh())) {
-
+                lam.setListLap(model.getLaporanAjukan());
+                lap = null;
             } else if (source.equals(lam.getBtnSetujui())) {
-
+                if (lap != null) {
+                    lap.setAcc(true);
+                    JOptionPane.showMessageDialog(null, "Laporan berhasil disetujui");
+                    model.addLaptoKoor(lap);
+                    lap = null;
+                    lam.reset();
+                    lam.setListLap(model.getListLaporanAll());
+                } else {
+                    JOptionPane.showMessageDialog(null, "Silahkan pilih laporan");
+                    lap = null;
+                    lam.reset();
+                    lam.setListLap(model.getListLaporanAll());
+                }
             } else if (source.equals(lam.getBtnTolak())) {
-
+                if (lap != null) {
+                    lap.setTolakAcc(true);
+                    JOptionPane.showMessageDialog(null, "Laporan berhasil ditolak");
+                    lap = null;
+                    lam.reset();
+                    lam.setListLap(model.getListLaporanAll());
+                } else {
+                    JOptionPane.showMessageDialog(null, "Silahkan pilih laporan");
+                    lap = null;
+                    lam.reset();
+                    lam.setListLap(model.getListLaporanAll());
+                }
             }
         } else if (currentView.equals(
                 "Laporan Pengajuan Page")) {
@@ -399,14 +503,32 @@ public class Controller extends MouseAdapter implements ActionListener {
             lip.setDetail(lap.getDetail());
             if (lap.isAcc()) {
                 lip.setStatLap("Sudah disetujui");
-            } else {
+            } else if (lap.isAcc() == false && lap.isTolakAcc()) {
+                lip.setStatLap("Laporan ditolak");
+            } else if (lap.isAcc() == false && lap.isTolakAcc() == false) {
                 lip.setStatLap("Belum disetujui");
             }
             if (lap.isStatKoor()) {
                 lip.setStatAsset("Asset sudah diinput");
-            } else {
+            } else if (lap.isStatKoor() == false && lap.isTolakKoor()) {
+                lip.setStatAsset("Laporan ditolak");
+            } else if (lap.isStatKoor() == false && lap.isTolakKoor() == false) {
                 lip.setStatAsset("Asset belum diinput");
             }
+        } else if (currentView.equals("Pengelolaan Page")) {
+            lap = model.getLaporanAllByDate(peng.getSelectedLap());
+            peng.setTipeLap(lap.getType());
+            peng.setAsset(lap.getAsset());
+            peng.setQty("" + lap.getQty());
+            peng.setLokasi(lap.getLocation());
+            peng.setDetail(lap.getDetail());
+        } else if (currentView.equals("Laporan Masuk Page")) {
+            lap = model.getLaporanAllByDate(lam.getSelectedLap());
+            lam.setTipeLap(lap.getType());
+            lam.setAsset(lap.getAsset());
+            lam.setQty("" + lap.getQty());
+            lam.setLokasi(lap.getLocation());
+            lam.setDetail(lap.getDetail());
         }
     }
 }

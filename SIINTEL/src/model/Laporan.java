@@ -19,6 +19,9 @@ public class Laporan {
     private Date date;
     private boolean acc;
     private boolean statKoor;
+    private boolean tolakKoor;
+    private boolean tolakAcc;
+    private boolean ajukan;
     private String asset;
     private int qty;
     private String detail;
@@ -35,6 +38,33 @@ public class Laporan {
         this.idLaporan = "LAP-" + nLaporan++;
         setAcc(false);
         setStatKoor(false);
+        setTolakKoor(false);
+        setAjukan(false);
+        setTolakAcc(false);
+    }
+
+    public boolean isTolakAcc() {
+        return tolakAcc;
+    }
+
+    public void setTolakAcc(boolean tolakAcc) {
+        this.tolakAcc = tolakAcc;
+    }
+
+    public boolean isAjukan() {
+        return ajukan;
+    }
+
+    public void setAjukan(boolean ajukan) {
+        this.ajukan = ajukan;
+    }
+
+    public boolean isTolakKoor() {
+        return tolakKoor;
+    }
+
+    public void setTolakKoor(boolean tolak) {
+        this.tolakKoor = tolak;
     }
 
     public boolean isAcc() {
