@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import model.Application;
 import model.Employee;
 import model.KoorInventaris;
+import model.Laporan;
 import model.ManagerInventaris;
 import model.Pelapor;
 import view.halamanKoor.dasboardKoor;
@@ -48,6 +49,9 @@ public class Controller extends MouseAdapter implements ActionListener {
     private dasboardKoor viewKoor;
     private dasboardManager viewManager;
     private dasboardPelapor viewPelapor;
+
+    private String asset;
+    private Laporan lap;
 
     private String currentView;
     private JPanel mainPanel;
@@ -100,6 +104,7 @@ public class Controller extends MouseAdapter implements ActionListener {
         laj.addAdapter(this);
         laj.addListener(this);
         lip.addListener(this);
+        lip.AddAdapter(this);
 
         mainPanel = view.getMenuPanel();
         mainPanel.add(sip, "Sign In Page");
@@ -159,6 +164,8 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewKoor.setTittle("INPUT ASSET PAGE");
             currentView = "Input Asset Page";
             viewKoor.getCardLayout().show(koorPanel, currentView);
+            lap = null;
+            ias.reset();
         } else if (source.equals(viewKoor.getBtnPengelolaan())) {
             viewKoor.setTittle("PENGELOLAAN PAGE");
             currentView = "Pengelolaan Page";
@@ -197,6 +204,8 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewPelapor.setTittle("LIHAT LAPORAN PAGE");
             currentView = "Lihat Laporan Page";
             viewPelapor.getCardLayout().show(pelaporPanel, currentView);
+            lap = null;
+            lip.reset();
         }
 
         if (currentView.equals("Sign In Page")) {
@@ -204,14 +213,14 @@ public class Controller extends MouseAdapter implements ActionListener {
                 String username = sip.getUsername();
                 String password = sip.getPassword();
                 Employee emp = model.getEmployee(username, password);
-                if(emp instanceof ManagerInventaris) {
+                if (emp instanceof ManagerInventaris) {
                     manager = (ManagerInventaris) emp;
                 } else if (emp instanceof KoorInventaris) {
                     koor = (KoorInventaris) emp;
                 } else if (emp instanceof Pelapor) {
                     pelapor = (Pelapor) emp;
                 }
-                view.dispose();
+                sip.reset();
                 String sManager = "===== STATUS =====" + "\n"
                         + "Laporan masuk : 0" + "\n"
                         + "Laporan disetujui : 0" + "\n"
@@ -230,18 +239,21 @@ public class Controller extends MouseAdapter implements ActionListener {
                         + "Laporan disetujui : 0" + "\n"
                         + "Laporan ditolak : 0" + "\n";
                 if (manager != null) {
+                    view.dispose();
                     currentView = "Laporan Masuk Page";
                     viewManager.getCardLayout().show(managerPanel, currentView);
                     viewManager.setVisible(true);
                     viewManager.setGreetings("Selamat datang, " + manager.getName());
                     viewManager.setStatus(sManager);
                 } else if (koor != null) {
+                    view.dispose();
                     currentView = "Pengelolaan Page";
                     viewKoor.getCardLayout().show(koorPanel, currentView);
                     viewKoor.setVisible(true);
                     viewKoor.setGreetings("Selamat datang, " + koor.getName());
                     viewKoor.setStatus(sKoor);
                 } else if (pelapor != null) {
+                    view.dispose();
                     currentView = "Laporan Pengajuan Page";
                     viewPelapor.getCardLayout().show(pelaporPanel, currentView);
                     viewPelapor.setVisible(true);
@@ -298,9 +310,20 @@ public class Controller extends MouseAdapter implements ActionListener {
         } else if (currentView.equals(
                 "Input Asset Page")) {
             if (source.equals(ias.getBtnInput())) {
-                
+                Date date = ias.getDate();
+                String name = ias.getNama();
+                String merk = ias.getMerk();
+                String location = ias.getLokasi();
+                String detail = ias.getDetail();
+                if (name.equals("") || merk.equals("") || location.equals("") || detail.equals("")) {
+                    JOptionPane.showInternalMessageDialog(null, "Form tidak boleh kosong!");
+                } else {
+                    
+                }
             } else if (source.equals(ias.getBtnRefresh())) {
-
+                ias.setListLap(model.getListLaporanAll());
+                lap = null;
+                ias.reset();
             }
         } else if (currentView.equals(
                 "Pengelolaan Page")) {
@@ -333,14 +356,23 @@ public class Controller extends MouseAdapter implements ActionListener {
                 int qty = laj.getQty();
                 String lokasi = laj.getLokasi();
                 String detail = laj.getDetail();
-                pelapor.createLaporan(type, date, type, 0, lokasi, detail);
+                if (date.equals(null) || type.equals("") || qty == 0 || lokasi.equals("") || detail.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Form tidak boleh kosong");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Laporan berhasil dibuat");
+                    pelapor.createLaporan(type, date, asset, qty, lokasi, detail);
+                    laj.reset();
+                    asset = null;
+                }
             } else if (source.equals(laj.getBtnRefresh())) {
-
+                laj.setListAsset(model.getListAssetName());
+                asset = null;
+                laj.setSelectedAsset("");
             }
         } else if (currentView.equals(
                 "Lihat Laporan Page")) {
             if (source.equals(lip.getBtnRefresh())) {
-
+                lip.setListLap(model.getListLaporanByPelapor(pelapor));
             }
         }
     }
@@ -350,10 +382,31 @@ public class Controller extends MouseAdapter implements ActionListener {
         if (currentView.equals("Sign Up Page")) {
 
         } else if (currentView.equals("Input Asset Page")) {
-
+            lap = model.getLaporanAllByDate(ias.getSelectedLap());
+            ias.setTipeLap(lap.getType());
+            ias.setAsset(lap.getAsset());
+            ias.setQty("" + lap.getQty());
+            ias.setLokasi(lap.getLocation());
         } else if (currentView.equals("Laporan Pengajuan Page")) {
-                String asset = laj.getSelectedAsset();
-                laj.setSelectedAsset(laj.getSelectedAsset());
+            asset = laj.getSelectedAsset();
+            laj.setSelectedAsset(laj.getSelectedAsset());
+        } else if (currentView.equals("Lihat Laporan Page")) {
+            lap = model.getLaporanByDate(lip.getSelectedLap(), pelapor);
+            lip.setTipeLap(lap.getType());
+            lip.setAsset(lap.getAsset());
+            lip.setQty("" + lap.getQty());
+            lip.setLokasi(lap.getLocation());
+            lip.setDetail(lap.getDetail());
+            if (lap.isAcc()) {
+                lip.setStatLap("Sudah disetujui");
+            } else {
+                lip.setStatLap("Belum disetujui");
+            }
+            if (lap.isStatKoor()) {
+                lip.setStatAsset("Asset sudah diinput");
+            } else {
+                lip.setStatAsset("Asset belum diinput");
+            }
         }
     }
 }

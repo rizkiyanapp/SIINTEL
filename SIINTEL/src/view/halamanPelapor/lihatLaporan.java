@@ -6,6 +6,7 @@
 package view.halamanPelapor;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import view.halamanManager.*;
 
 /**
@@ -56,6 +57,10 @@ public class lihatLaporan extends javax.swing.JPanel {
     public void setStatAsset(String s) {
         txStatAsset.setText(s);
     }
+    
+    public String getSelectedLap() {
+        return listLap.getSelectedValue();
+    }
 
     public void reset() {
         txTipeLap.setText("");
@@ -65,6 +70,10 @@ public class lihatLaporan extends javax.swing.JPanel {
         txDetail.setText("");
         txStatLap.setText("");
         txStatAsset.setText("");
+    }
+    
+    public void AddAdapter(MouseAdapter e) {
+        listLap.addMouseListener(e);
     }
     
     public void addListener(ActionListener e) {

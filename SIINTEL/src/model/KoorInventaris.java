@@ -19,6 +19,7 @@ public class KoorInventaris extends Employee {
 
     public KoorInventaris(String nama, Date birthday, String email, String username, String password, String NIP) {
         super(nama, birthday, email, username, password, NIP, "Koordinator Inventaris");
+        listBerkas = new ArrayList();
     }
     
     public void assetInputed(Laporan lap) {

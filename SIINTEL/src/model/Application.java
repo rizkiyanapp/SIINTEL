@@ -102,16 +102,16 @@ public class Application {
     public Laporan getLaporanByIndex(int idx) {
         return listLaporan.get(idx);
     }
-    
+
     public boolean searchEmployee(String username) {
-        for(Employee e : listAllUser) {
-            if(e.getUsername().equals(username)) {
+        for (Employee e : listAllUser) {
+            if (e.getUsername().equals(username)) {
                 return true;
             }
         }
         return false;
     }
-    
+
     public Employee getEmployee(String username, String password) {
         for (Employee e : listAllUser) {
             if (e.getUsername().equals(username) && e.getPassword().equals(password)) {
@@ -121,4 +121,51 @@ public class Application {
         return null;
     }
 
+    public String[] getListAssetName() {
+        String[] list = {("Kursi Chetos"), ("Meja Dosen"), ("Meja PC"), ("PC"), ("Kipas Angin"), ("AC"), ("Proyektor"),
+            ("Kursi Meeting"), ("Kabel HDMI"), ("TV"), ("Lemari Buku"), ("Kursi Sofa"), ("Speaker")};
+        return list;
+    }
+
+    public String[] getListLaporanByPelapor(Pelapor p) {
+        ArrayList<String> list = new ArrayList();
+        for (Laporan lap : p.getListLaporan()) {
+            String s = lap.getDate().toString();
+            list.add(s);
+        }
+        return (String[]) list.toArray(new String[list.size()]);
+    }
+
+    public Laporan getLaporanByDate(String date, Pelapor p) {
+        for (Laporan lap : p.getListLaporan()) {
+            if (lap.getDate().toString().equals(date)) {
+                return lap;
+            }
+        }
+        return null;
+    }
+
+    public String[] getListLaporanAll() {
+        ArrayList<String> list = new ArrayList();
+        for (Pelapor p : listPelapor) {
+            for (Laporan lap : p.getListLaporan()) {
+                if (lap.isAcc() && lap.isStatKoor() == false) {
+                    String s = lap.getDate().toString();
+                    list.add(s);
+                }
+            }
+        }
+        return (String[]) list.toArray(new String[list.size()]);
+    }
+
+    public Laporan getLaporanAllByDate(String date) {
+        for (Pelapor p : listPelapor) {
+            for (Laporan lap : p.getListLaporan()) {
+                if (lap.getDate().toString().equals(date)) {
+                    return lap;
+                }
+            }
+        }
+        return null;
+    }
 }

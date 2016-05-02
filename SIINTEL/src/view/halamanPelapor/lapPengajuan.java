@@ -119,11 +119,6 @@ public class lapPengajuan extends javax.swing.JPanel {
 
         jLabel4.setText("ASSET");
 
-        listAsset.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Kursi Ceetoz", "Meja Dosen", "Proyektor", "Kabel HDMI", "PC Desktop", "TV", "Speaker", "Terminal", "Kipas Angin" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(listAsset);
 
         txAsset.setEditable(false);
@@ -135,6 +130,8 @@ public class lapPengajuan extends javax.swing.JPanel {
         cbLokasi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih lokasi asset...", "E101", "E102", "E103", "E104", "E105", "KU3.03.01", "KU3.03.02", "KU3.03.03", "KU3.03.04", "KU3.03.05" }));
 
         jLabel1.setText("QTY");
+
+        spinQty.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel5.setText("DETAIL");
 

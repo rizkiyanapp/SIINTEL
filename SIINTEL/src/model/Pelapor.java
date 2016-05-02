@@ -20,6 +20,7 @@ public class Pelapor extends Employee {
     public Pelapor(String nama, Date birthday, String email, String username, String password, String NIP) {
         super(nama, birthday, email, username, password, NIP, "Pelapor");
         nPelapor++;
+        listLap = new ArrayList();
     }
 
     public void createLaporan(String type, Date date, String asset, int qty, String location, String detail) {

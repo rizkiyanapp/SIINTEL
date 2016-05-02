@@ -31,6 +31,10 @@ public class inputAsset extends javax.swing.JPanel {
         return btnInput;
     }
     
+    public String getSelectedLap() {
+        return listLap.getSelectedValue();
+    }
+    
     public void setListLap(String[] list) {
         listLap.setListData(list);
     }
@@ -83,6 +87,7 @@ public class inputAsset extends javax.swing.JPanel {
     }
     
     public void addAdapter(MouseListener e) {
+        listLap.addMouseListener(e);
         spinDate.addMouseListener(e);
     }
     
